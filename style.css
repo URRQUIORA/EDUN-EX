@@ -1,0 +1,508 @@
+@charset "utf-8";
+
+@font-face{font-family: 'RIDIBatang'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');font-weight: normal;font-style: normal;}
+
+*{margin: 0; padding: 0;}
+html,body{font-size: 12px;
+          font-family: 'RIDIBatang';}
+h1,h2,h3,h4,h5,h6{font-size: 100%;}
+ol,ul{list-style: none;}
+a{text-decoration: none;
+  color: inherit;}
+address{font-style: normal;}
+img{vertical-align: bottom;}
+table{border-collapse: collapse;}
+button{border: none;
+       background: transparent;}
+
+
+
+#wrap{
+  width: 100%;
+}
+.align{
+  max-width: 1300px;
+  margin: auto;
+}
+
+header{
+  background: #000000ab;
+  color: #fff;
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+}
+
+#pc-header{}
+#pc-header::after{
+  /* 종료태그 직전에 추가되는 가상공간
+  태그와는 철저히 다른 개념인데, 태그인 것처럼 사용할 수는 있다!
+  내용의 유무 / 디스플레이 속성을 정해서 가상공간을 태그처럼 활용 가능! */
+  content: '';
+  display: block;
+  clear: both;
+}
+
+#logo{
+  float: left;
+  width: 12%;
+  margin: 10px 0;
+}
+#logo h1{}
+#logo h1 a{}
+#logo h1 a img{}
+
+nav{
+  float: left;
+  width: 76%;
+  padding: 0 4rem;
+  box-sizing: border-box;
+  /* 내가 지정한 태그 크기 안에서 보더와 패딩이 생성되도록 하는 속성 */
+}
+nav div{
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+nav div>a{
+  display: block;
+  font-size: 1.6rem;
+  line-height: 80px;
+}
+nav div:hover>a{
+/* div를 호버하면 자식태그로 있는 a태그의 스타일을 다음과 같이 변경시키겠다. */
+  background: #00000093;
+}
+nav div .sub{
+  display: none;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.743);
+  width: 100%;
+  left: 0;
+  top: 80px;
+  /* 본인 위에 있는 메인메뉴의 세로값만큼 줘서, 메인메뉴 아래쪽에 서브가 배치될 수 있도록! */
+  box-sizing: border-box;
+  /* 서브메뉴들을 배치하기 위해 패딩-레프트를 사용하는데, 이 때 박스 크기게 플러스가 되는 걸 방지하기 위해서 */
+}
+
+nav div:nth-child(1) .sub{
+  padding-left: 24%;
+}
+nav div:nth-child(2) .sub{
+  padding-left: 33%;
+}
+nav div:nth-child(3) .sub{
+  padding-left: 40%;
+}
+nav div:nth-child(4) .sub{
+  padding-left: 50%;
+}
+nav div:nth-child(5) .sub{
+  padding-left: 59%;
+}
+
+nav div .sub li{
+  float: left;
+}
+nav div .sub li a{
+  display: block;
+  font-size: 1.3rem;
+  padding: 0.6rem 2rem;
+}
+nav li:hover{background: rgba(0, 0, 0, 0.873);}
+
+#search{
+  float: right;
+  width: 12%;
+  position: relative;
+  /* 돋보기 버튼의 위치 기준 값 */
+}
+#search input{
+  width: 100%;
+  height: 40px;
+  padding-left: 1rem;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-top: 1.5rem;
+  background: #333;
+  border: 1px solid #000;
+  color: #fff;
+  /* input태그에 입력되는 텍스트 색깔 */
+  padding-right: 40px;
+}
+#search input::placeholder{
+  color: #ccc;
+}
+#search button{
+  background: url(img/searchw.png);
+  width: 30px; height: 30px;
+  position: absolute;
+  right: 0.5rem;
+  top: 21px;
+}
+
+#ta-header{
+  display: none;
+  padding: 1rem 0;
+}
+
+#tlogo{
+  text-align: center;
+}
+#tlogo a{}
+#tlogo a img{}
+
+span#tmbtn{
+  /* 메뉴가 나오게 만드는 버튼 역할 (도형) */
+  display: block;
+  width: 20px; height: 20px;
+  /* background: #fff; */
+  border: 1px solid #fff;
+  border-radius: 50%;
+  position: absolute;
+  right: 2rem;
+  top: 2.5rem;
+  transition: 0.4s;
+}
+#tmbtn:hover{background: #fff;}
+
+#tmenu{
+  display: none;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.875);
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  z-index: 999;
+  /* position으로 겹쳐져 있는 태그 중에 가장 상위에 있어야 하므로 순서를 정해주는 zindex 값을 높게 부여 */
+} 
+#tmenu button{
+  color: #fff;
+  font-size: 3rem;
+  background: rgba(0, 0, 0, 0.947);
+  position: absolute;
+  top: 15rem;
+  left: 10rem;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+}
+#tmenu ul{
+  margin-top: 25rem;
+  margin-left: 10rem;
+}
+#tmenu ul li:hover{
+  font-style: italic;
+  text-decoration: line-through;
+  color: #aaa;
+}
+#tmenu ul li a{
+  display: block;
+  font-size: 1.9rem;
+  line-height: 70px;
+}
+
+main{}
+
+section{}
+
+#con1{
+  overflow: hidden;
+  padding: 4rem 0;
+}
+
+.c1left{
+  width: 40%;
+  float: left;
+  text-align: center;
+  padding: 4.5rem 0;
+}
+.c1left h3{
+  font-size: 2.2rem;
+}
+.c1left span{
+  display: block;
+  width: 50px;
+  border-top: 2px solid #000;
+  margin: 3rem auto;
+}
+.c1left p{
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+
+.c1right{
+  width: 60%;
+  float: right;
+  position: relative;
+  /* .crtext의 위치 기준 */
+  overflow: hidden;
+  /* └ 호버했을 때 이미지 영역이 부모를 초과해서 이를 잘라서 보이지 않도록 처리하기 위함 */
+}
+
+.c1right .crbg{
+  background: url(img/banner.png);
+  background-size: cover;
+  width: 100%;
+  height: 360px;
+  transition: 0.3s;
+}
+
+.c1right .crtext{
+  position: absolute;
+  top: 280px; bottom: 0;
+  /* width: 100%; */
+  left: 0; right: 0;
+  background: rgba(0, 0, 0, 0.704);
+  color: #fff;
+  text-align: center;
+  transition: 0.3s;
+}
+.crtext img{
+  width: 30px;
+  margin: 1rem 0;
+  transition: 0.3s;
+}
+.crtext h4{
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+.crtext h3{
+  font-size: 2.3rem;
+  font-weight: normal;
+}
+.crtext span{
+  display: inline-block;
+  height: 50px;
+  border-left: 1px solid #fff;
+  margin: 1rem 0;
+}
+.crtext p{
+  font-size: 1.2rem;
+}
+.crtext button{
+  color: #fff;
+  border: 1px solid #fff;
+  font-family: 'RIDIBatang';
+  font-size: 1.2rem;
+  padding: 1rem 1.2rem;
+  margin-top: 2rem;
+}
+
+.c1right:hover .crbg{
+  transform: scale(1.1);
+}
+.c1right:hover .crtext{
+  top: -35px;
+}
+.c1right:hover .crtext img{
+  opacity: 0;
+}
+
+#con2{}
+
+#con2 h3{
+  font-size: 1.8rem;
+}
+
+.c2slide{
+  margin: 1rem 0 3rem;
+}
+.c2slide ul{}
+.c2slide ul li{}
+.c2slide ul li a{
+  display: block;
+}
+.c2slide ul li a span{
+  display: block;
+}
+
+.c2slide ul li a .imgbox{}
+.imgbox img{}
+
+.c2slide ul li a .textbox{
+  text-align: center;
+  padding: 1rem 0;
+}
+.textbox .text1{
+  font-size: 1.6rem;
+}
+.textbox .text2{
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0.2rem 0 0.5rem;
+}
+.textbox .text3{
+  font-size: 1.4rem;
+  font-weight: bold;
+  display: inline-block;
+  /* 내용만큼 크기를 차지하기 위함 */
+}
+.text3::after{
+  /* 해당 태그의 종료태그 직전에 가상공간을 추가해서 보더바텀을 부여하는 효과로 사용할 예정
+  => 다만, 이 공간은 태그가 아닌 가상공간이므로 태그처럼 사용할 수 있는 상태로 먼저 만들어서 css 속성을 부여해야 한다. */
+  content: ''; display: block;
+  border-bottom: 10px solid #ffce00;
+  margin-top: -1rem;
+  border-radius: 10px;
+  width: 0;
+  transition: 0.5s;
+}
+/* li태그를 hover하면 .text3::after가 가로값을 다시 되찾도록 */
+.c2slide li:hover .text3::after{
+  width: 100%;
+}
+
+.more{
+  text-align: center;
+}
+.more a{
+  display: inline-block;
+  border: 1px solid #000;
+  padding: 1.3rem 2.5rem;
+  font-size: 1.4rem;
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s;
+}
+.more a::after{
+  content: '';
+  display: block;
+  width: 0; height: 57px; background: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0; left: 0;
+  transition: 0.3s;
+}
+.more a:hover::after{
+  width: 100%;
+}
+.more a:hover{
+  border: 1px solid transparent;
+}
+
+#con3{
+  background: url(img/bannerbg.png) center;
+  width: 100%;
+  height: 340px;
+  color: #fff;
+  text-align: center;
+  padding-top: 7rem;
+  box-sizing: border-box;
+  margin-top: 5rem;
+}
+#con3 h3{
+  font-size: 4rem;
+  font-weight: normal;
+  letter-spacing: 30px;
+}
+#con3 p{
+  font-size: 1.5rem;
+  color: #ccc;
+}
+#con3 a{
+  display: inline-block;
+  border: 1px solid #fff;
+  font-size: 1.3rem;
+  padding: 1.5rem 2.5rem;
+  letter-spacing: 1px;
+  margin-top: 3rem;
+  transition: 0.3s;
+}
+#con3 a:hover{
+  background: rgba(255, 255, 255, 0.2);
+}
+
+footer{
+	overflow: hidden;
+	background: #000;
+	padding: 3rem 0;
+	color: #ddd;
+}
+#flogo{
+	float: left;
+	margin-top: 1rem;
+}
+#center{
+	float: right;
+	margin-right: 10rem;
+}
+#info{
+	float: right;
+}
+.tel{font-size: 1.8rem;
+color: #893333;
+font-style: oblique;
+letter-spacing: 3px;}
+footer h2{
+	font-size: 1.3rem;
+	font-weight: normal;
+	margin-bottom: 1rem;
+}
+footer address{
+	color: #999;
+	line-height: 1.6;
+	font-size: 0.9rem;
+}
+
+/* 추가내용 */
+.s1con{
+	text-align: center;
+	padding: 4rem 0 6rem;
+}
+.s1con h3{
+	font-size: 2.5rem;
+	letter-spacing: 2px;
+}
+.s1con span{
+	display: inline-block;
+	height: 70px;
+	border-left: 1px solid #ccc;
+	margin: 2rem 0;
+}
+.s1con ul{
+	overflow: hidden;
+  padding: 1rem 0;
+	max-width: 900px;
+}
+.s1con ul li{
+	float: left;
+	width: 16%;
+}
+.s1con li+li{
+	margin-left: 12%;
+}
+.s1con ul li img{
+	width: 100%;
+}
+.s1con ul li p{
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-top: 2rem;
+}
+
+
+
+/* 태블릿용 홈페이지 미디어쿼리 */
+@media screen and (max-width:768px){
+  /* 웹페이지를 확인할 공간이 "화면"이고 그 최대가로값이 768px일 때,
+  다음 태그에 다음과 같은 스타일을 적용시키겠다!
+  ※ and : 논리합연산자 (양변이 모두 참일 때 문장을 실행시킴) */
+
+  #pc-header{display: none;}
+  #ta-header{display: block;}
+
+  .c1left,.c1right{
+    float: none;
+    width: 100%;
+    padding-top: 0;
+  }
+
+  #con3 p{font-size: 1.3rem;}
+  #con3 a{font-size: 1.1rem;}
+  footer{padding: 3rem;}
+
+  .s1con ul{padding: 0 1rem;}
+
+
+}
+
+
+

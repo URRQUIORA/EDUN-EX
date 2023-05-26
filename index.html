@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="jquery-3.3.1.min.js"></script>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- bxslider 플러그인 -->
+  <script src="bx/dist/jquery.bxslider.min.js"></script>
+  <link rel="stylesheet" href="bx/dist/jquery.bxslider.css">
+
+</head>
+<body>
+
+  <!-- #wrap>header+main+section+footer -->
+  <div id="wrap">
+    <header>
+      <!-- #pc-header+#ta-header -->
+      <div id="pc-header">
+        <div class="align">
+          <!-- #logo+nav+#search -->
+          <div id="logo">
+            <!-- h1>a>img -->
+            <h1><a href="#"><img src="img/logo_header.png" alt="헤더로고"></a></h1>
+          </div>
+          <nav>
+            <!-- div>a+ul.sub>li>a -->
+            <div>
+              <a href="#">Brand</a>
+              <ul class="sub">
+                <li><a href="#">about</a></li>
+                <li><a href="#">customizing</a></li>
+                <li><a href="#">class</a></li>
+              </ul>
+            </div>
+            <div>
+              <a href="#">Wallet</a>
+              <ul class="sub">
+                <li><a href="#">large</a></li>
+                <li><a href="#">medium</a></li>
+                <li><a href="#">small</a></li>
+              </ul>
+            </div>
+            <div>
+              <a href="#">Bags</a>
+              <ul class="sub">
+                <li><a href="#">backpack</a></li>
+                <li><a href="#">cross</a></li>
+                <li><a href="#">tote</a></li>
+                <li><a href="#">boston</a></li>
+              </ul>
+            </div>
+            <div>
+              <a href="#">Acc</a>
+              <ul class="sub">
+                <li><a href="#">keyholder</a></li>
+                <li><a href="#">strap</a></li>
+                <li><a href="#">tassel</a></li>
+                <li><a href="#">bookmarker</a></li>
+              </ul>
+            </div>
+            <div>
+              <a href="#">Community</a>
+              <ul class="sub">
+                <li><a href="#">notice</a></li>
+                <li><a href="#">1:1 qna</a></li>
+                <li><a href="#">gallery</a></li>
+                <li><a href="#">map</a></li>
+              </ul>
+            </div>
+          </nav>
+          <div id="search">
+            <!-- input+button -->
+            <input type="text" placeholder="검색어">
+            <button></button>
+          </div>
+        </div>
+      </div>
+      <div id="ta-header">
+        <!-- #tlogo+#tmbtn+#tmenu -->
+        <div id="tlogo">
+          <!-- a>img -->
+          <a href="#"><img src="img/logo_header.png" alt="태블릿_로고"></a>
+        </div>
+        <span id="tmbtn"></span>
+        <div id="tmenu">
+          <!-- button+ul -->
+          <button>X</button>
+          <ul>
+            <!-- li>a -->
+            <li><a href="#">Brand</a></li>
+            <li><a href="#">Wallet</a></li>
+            <li><a href="#">Bags</a></li>
+            <li><a href="#">Acc</a></li>
+            <li><a href="#">Community</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- ul>li>img -->
+      <ul>
+        <li><img src="img/slide1.jpg" alt="슬라이드 이미지 1"></li>
+        <li><img src="img/slide2.jpg" alt="슬라이드 이미지 2"></li>
+      </ul>
+    </main>
+    <section>
+      <div id="con1" class="align">
+        <!-- .c1left+.c1right -->
+        <div class="c1left" data-aos="fade-up" data-aos-duration="700">
+          <!-- h3+span+p -->
+          <h3>
+            '이든' :: [착한, 어진]
+          </h3>
+          <span></span>
+          <p>
+            이라는 뜻을 가진 순 우리말로 착하고 어진 마음으로,<br>
+            내가 사용할 물건을 만들듯 한땀 한땀 정성들여<br>
+            제대로 된 물건을 만들고자 하는 마음을 담았습니다.<br>
+            이든 공방의 제품은 가죽 본연의 느낌을 그대로 담아<br>
+            시간이 지남에 따라, 사용감에 따라 멋이 더해집니다.
+          </p>
+        </div>
+        <div class="c1right">
+          <!-- .crbg+.crtext -->
+          <div class="crbg"></div>
+          <div class="crtext">
+            <!-- img+h4+h3+span+p+button -->
+            <img src="img/mousewh.png" alt="">
+            <h4>Edun's Leather</h4>
+            <h3>이든만의 레더</h3>
+            <span></span>
+            <p>
+              이든만의 기술로 느낄 수 있는<br>
+              격이 다른 레더의 재질을 느껴보세요.<br>
+              당신에게 어울리는 레더를 직접 만져보세요.
+            </p>
+            <button>샘플 체크</button>
+          </div>
+        </div>
+      </div>
+      <div class="s1con">
+        <!--				h3+ul>li*4>img+p -->
+        <h3>· 사업분야 ·</h3>
+        <span></span>
+        <ul class="align">
+          <li>
+            <img src="img/icon1.png" alt="">
+            <p>커스터마이징</p>
+          </li>
+          <li>
+            <img src="img/icon2.png" alt="">
+            <p>핸드메이드</p>
+          </li>
+          <li>
+            <img src="img/icon3.png" alt="">
+            <p>DIY키트</p>
+          </li>
+          <li>
+             <img src="img/icon4.png" alt="">
+             <p>원데이클래스</p>
+          </li>
+        </ul>
+      </div>
+      <div id="con2" class="align">
+        <!-- h3+.c2slide+.more -->
+        <h3> > Hot Items </h3>
+        <div class="c2slide">
+          <!-- ul>li>a>span.imgbox+span.textbox -->
+          <ul>
+            <li>
+              <a href="#">
+                <span class="imgbox">
+                  <img src="img/thumb_01.jpg" alt="">
+                </span>
+                <span class="textbox">
+                  <span class="text1">
+                    캐주얼 브리프케이스
+                  </span>
+                  <span class="text2">
+                    남녀 공용으로 사용하기 좋은 멋스러운 데일리백
+                  </span>
+                  <span class="text3">
+                    700,000원
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="imgbox">
+                  <img src="img/thumb_02.jpg" alt="">
+                </span>
+                <span class="textbox">
+                  <span class="text1">
+                    사각필통
+                  </span>
+                  <span class="text2">
+                    멋진 필통으로 공부를 더 잘하고 싶어질지도
+                  </span>
+                  <span class="text3">
+                    52,000원
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="imgbox">
+                  <img src="img/thumb_03.jpg" alt="">
+                </span>
+                <span class="textbox">
+                  <span class="text1">
+                    카드포켓 핸드폰 케이스
+                  </span>
+                  <span class="text2">
+                    뒷면 카드주머니로 실용적이고 아름다운 디자인
+                  </span>
+                  <span class="text3">
+                    55,000원
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="imgbox">
+                  <img src="img/thumb_04.jpg" alt="">
+                </span>
+                <span class="textbox">
+                  <span class="text1">
+                    파티션 동전지갑
+                  </span>
+                  <span class="text2">
+                    파티션이 있어 수납이 편리한 동전지갑
+                  </span>
+                  <span class="text3">
+                    59,000원
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="imgbox">
+                  <img src="img/thumb_05.jpg" alt="">
+                </span>
+                <span class="textbox">
+                  <span class="text1">
+                    통가죽 다이어리
+                  </span>
+                  <span class="text2">
+                    스케줄 관리도 품격있게, 통가죽 다이어리로
+                  </span>
+                  <span class="text3">
+                    77,000원
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="imgbox">
+                  <img src="img/thumb_06.jpg" alt="">
+                </span>
+                <span class="textbox">
+                  <span class="text1">
+                    하트 북마크
+                  </span>
+                  <span class="text2">
+                    북마크에 심쿵, 하트 북마크
+                  </span>
+                  <span class="text3">
+                    7,000원
+                  </span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="more">
+          <a href="#">더보기 +</a>
+        </div>
+      </div>
+      <div id="con3">
+        <!-- h3+p+a -->
+        <h3>CUSTOM</h3>
+        <p>내 마음대로! 원하는대로! 이든 공방 주문제작으로 세상에 단 하나뿐인 나만의 제품을 만드세요.</p>
+        <a href="#">Detail View +</a>
+      </div>
+    </section>
+    <footer>
+			<div class="align">
+<!--			#flogo+#info+#center -->
+				<div id="flogo">
+				<a href="#"><img src="img/logo_footer.png" alt=""></a>
+			</div>
+				<div id="info">
+				<h2>INFO</h2>
+				<address>
+					상호명 : 이든공방대표자 : 하호주개인정보보호책임관리자 : 하호주 <br>
+					주소 : 대구광역시 수성구 지산로3길 112-4, 1층 상가호(지산동, 천가지 꿈) <br>
+					전화번호 : 010-6540-5211E-mail : edunleather@naver.com <br>
+					통신판매업신고번호 : 제 2018-대구수성구-0665 호사업자등록번호 : 611-39-00284
+				</address>
+			</div>
+				<div id="center">
+				<h2>CS CENTER</h2>
+				<div class="tel">0507-1422-5211</div>
+				<address>
+					MON-FRI. 10:00~18:00 / LUNCH. 12:00~13:00 <br>
+					CLOSE. SAT, SUN, HOLIDAY
+				</address>
+			</div>
+			</div>
+		</footer>
+  </div>
+  
+</body>
+</html>
